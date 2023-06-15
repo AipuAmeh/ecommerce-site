@@ -1,3 +1,3 @@
-DROP DATABASE IF EXISTS travel_db;
+DROP DATABASE IF EXISTS commerce_db;
 
-CREATE DATABASE travel_db;
+CREATE DATABASE commerce_db;
