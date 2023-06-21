@@ -41,17 +41,16 @@ router.post('/', async (req, res) => {
       tagIds: [1, 2, 3, 4]
     }
   */
- // WHY ARE MY TAGIDS NULL ?
-Product.create({
+await Product.create({
   product_name: req.body.product_name,
   price: req.body.price,
   stock: req.body.stock,
-  tagIds: req.body.tagId
+  tagId: [req.body.tagId]
 })
     .then((product) => {
       // if there's product tags, we need to create pairings to bulk create in the ProductTag model
-      if (req.body.tagIds.length) {
-        const productTagIdArr = req.body.tagIds.map((tag_id) => {
+      if (req.body.tagId.length) {
+        const productTagIdArr = req.body.tagId.map((tag_id) => {
           return {
             product_id: product.id,
             tag_id,
@@ -70,9 +69,9 @@ Product.create({
 });
 
 // update product
-router.put('/:id', (req, res) => {
+router.put('/:id', async (req, res) => {
   // update product data
-  Product.update(req.body, {
+ await Product.update(req.body, {
     where: {
       id: req.params.id,
     },
@@ -111,9 +110,9 @@ router.put('/:id', (req, res) => {
     });
 });
 
-router.delete('/:id', (req, res) => {
+router.delete('/:id', async (req, res) => {
   // delete one product by its `id` value
-  Product.destroy({
+ await Product.destroy({
     where: {
       id: req.params.id,
     }
