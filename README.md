@@ -12,7 +12,7 @@ Link to Demo: https://watch.screencastify.com/v/46MgTCr1nO74NioEZ8Ve
 Express, Sequelize, dotENV, and MySQL2 need to be installed for this application to run.
 ## Usage
 
-To install the routes, first connect to the database by adding your passowrd and username to a new .env file using the example file. Then enter "node seeds" into the integrated terminal to seed the pre-populated data. Finally, type "nodemon run watch" into the terminal to start the server and test the routes through Insomnia!
+To install the routes, first connect to the database by adding your passowrd and username to a new .env file using the example file. Connect to the database by initiatlizing mySQL2. Then enter "node seeds" into the integrated terminal of "server.js" to seed the pre-populated data. Finally, type "nodemon run watch" into the same terminal to start the server and test the routes through Insomnia!
 
 ## Credits
 
